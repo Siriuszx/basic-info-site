@@ -10,8 +10,6 @@ defaultRouter.get('/', (req, res) => {
 });
 
 defaultRouter.get('/:page', (req, res) => {
-  const base = req.params.page || 'index';
-
   fs.readFile(`pages/${base}.html`, (err, data) => {
     if (err) {
       fs.readFile('pages/404.html', (err, data) => {
